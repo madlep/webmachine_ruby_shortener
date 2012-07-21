@@ -9,8 +9,8 @@ ShortenerApp = Webmachine::Application.new do |app|
     # POST /link
     # GET  /link/<id>
     add ['trace', '*'], Webmachine::Trace::TraceResource
-    add ['links'], LinkResource
-    add ['links', :short_link], LinkResource
+    add [], LinkResource
+    add [:short_link], LinkResource
   end
 end
 
