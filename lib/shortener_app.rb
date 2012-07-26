@@ -6,8 +6,6 @@ require 'link_resource'
 
 ShortenerApp = Webmachine::Application.new do |app|
   app.routes do
-    # POST /link
-    # GET  /link/<id>
     add ['trace', '*'], Webmachine::Trace::TraceResource
     add [], LinkResource
     add [:short_link], LinkResource

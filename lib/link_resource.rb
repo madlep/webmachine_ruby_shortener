@@ -15,7 +15,7 @@ class LinkResource < Webmachine::Resource
   end
 
   def content_types_provided
-    [["application/json", :none]]
+    [["application/json", :ignore]]
   end
 
   def resource_exists?
@@ -54,7 +54,7 @@ class LinkResource < Webmachine::Resource
     parsed_body = JSON.parse(request.body.to_s)
     @link.url = parsed_body["url"]
     if @link.save
-      true
+      :ok
     else
       response.body = JSON.generate(@link.errors)
       422

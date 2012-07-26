@@ -53,7 +53,6 @@ class Link
   
   def valid?
     @errors = []
-    # TODO add URL format validation
     @errors << "short_link is missing" unless @short_link
     @errors << "url is missing" unless @url && !@url.strip.empty?
     @errors.empty?
